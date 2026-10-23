@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,12 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/pages/login.css">
 </head>
+
 <body>
 
   <div class="login-wrapper">
     <div class="login-card-container">
-      
+
       <!-- COLUMNA IZQUIERDA -->
       <aside class="login-sidebar">
         <div class="sidebar-top-label">— PORTAL ESTUDIANTIL</div>
@@ -22,7 +24,8 @@
         <div class="sidebar-center-content">
           <div class="unab-logo-box">
             <span class="logo-hint-text">Espacio para el logo UNAB<br><small>250 px de ancho</small></span>
-            <img src="../assets/logo/logo-unab.png" alt="Logo UNAB" class="unab-logo-img" onerror="this.style.display='none'">
+            <img src="../assets/logo/logo-unab.png" alt="Logo UNAB" class="unab-logo-img"
+              onerror="this.style.display='none'">
           </div>
 
           <div class="brand-title">
@@ -39,7 +42,9 @@
 
       <!-- COLUMNA DERECHA (Formulario) -->
       <main class="login-main">
-        <div class="help-top-link">
+        <div class="help-top-link"
+          style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          <a href="../index.html" style="font-weight: 600; color: var(--color-primary);">← Volver al inicio</a>
           <a href="#">¿Necesitas ayuda?</a>
         </div>
 
@@ -55,23 +60,18 @@
           </div>
 
           <form id="login-form" class="login-form" novalidate>
-            
+
             <!-- Campo Usuario -->
             <div class="form-group">
               <label for="username" class="form-label">Usuario</label>
               <div class="input-with-icon">
                 <!-- Ícono SVG de Usuario exacto al de la foto -->
-                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
-                <input 
-                  type="text" 
-                  id="username" 
-                  class="form-input" 
-                  placeholder="Ingresa tu usuario" 
-                  required
-                >
+                <input type="text" id="username" class="form-input" placeholder="Ingresa tu usuario" required>
               </div>
             </div>
 
@@ -83,20 +83,16 @@
               </div>
               <div class="input-with-icon">
                 <!-- Ícono SVG de Candado exacto -->
-                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
-                <input 
-                  type="password" 
-                  id="password" 
-                  class="form-input" 
-                  placeholder="Ingresa tu contraseña" 
-                  required
-                >
+                <input type="password" id="password" class="form-input" placeholder="Ingresa tu contraseña" required>
                 <!-- Ícono SVG de Ojo exacto para ver/ocultar -->
                 <button type="button" id="toggle-password" class="toggle-password-btn" title="Mostrar contraseña">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" width="18" height="18">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
                   </svg>
@@ -128,4 +124,5 @@
 
   <script src="../js/pages/login.js"></script>
 </body>
+
 </html>

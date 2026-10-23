@@ -1,32 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('login-form');
-  const emailInput = document.getElementById('email');
+  const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
   const alertBox = document.getElementById('login-alert');
+  const createUserBtn = document.getElementById('btn-create-user');
+  const togglePasswordBtn = document.getElementById('toggle-password');
 
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  // Funcionalidad para ver/ocultar contraseña con el ícono del ojo
+  if (togglePasswordBtn && passwordInput) {
+    togglePasswordBtn.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+    });
+  }
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    // Validación básica
-    if (!email || !password || !email.includes('@')) {
-      alertBox.style.display = 'block';
-      return;
-    }
-
-    alertBox.style.display = 'none';
-
-    // Guardamos una sesión simulada para usarla en el Dashboard
-    const userName = email.split('@')[0];
+  // Función común para guardar la sesión y redirigir al index de la raíz
+  const accederAlPortal = (usuario) => {
     localStorage.setItem('portal_user', JSON.stringify({
-      name: userName.charAt(0).toUpperCase() + userName.slice(1),
-      email: email,
+      name: usuario,
       loggedAt: new Date().toISOString()
     }));
+    window.location.href = '../index.html';
+  };
 
-    // Redirigir al dashboard (ambos están dentro de /pages)
-    window.location.href = 'dashboard.html';
-  });
+  // Acción del botón "Acceder" (Submit del formulario)
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!username || !password) {
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      alertBox.style.display = 'none';
+      accederAlPortal(username);
+    });
+  }
+
+  // Acción del botón "Crear usuario"
+  if (createUserBtn) {
+    createUserBtn.addEventListener('click', () => {
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!username || !password) {
+        alertBox.textContent = 'Escribe un usuario y contraseña para registrarte.';
+        alertBox.style.display = 'block';
+        return;
+      }
+
+      alertBox.style.display = 'none';
+      accederAlPortal(username);
+    });
+  }
 });
