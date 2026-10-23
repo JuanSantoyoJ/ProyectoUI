@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión · UNAB Campus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 118 0v3"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 115 0c0 1.5-2.5 2-2.5 3.5M12 17h.01"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+</svg>
+
+<main class="login">
+  <section class="brand">
+    <p class="brand__tag">Portal estudiantil</p>
+    <div class="brand__center">
+      <img class="brand__logo" src="assets/img/logo-unab-blanco.svg" alt="Universidad UNAB">
+      <h1>UNAB Campus</h1>
+      <p>Tu vida universitaria, conectada.<br>Un espacio para seguir avanzando.</p>
+    </div>
+    <div class="brand__foot"><span>Aprender. Conectar. Crecer.</span><span>UNAB Campus</span></div>
+  </section>
+
+  <section class="access">
+    <a class="access__help" href="#"><svg class="icon"><use href="#help"/></svg>¿Necesitas ayuda?</a>
+
+    <form class="form" id="login-form" novalidate>
+      <p class="form__eyebrow">Tu campus, a un clic</p>
+      <h2>Bienvenido de nuevo</h2>
+      <p class="form__intro">Ingresa tus datos para acceder a tu espacio estudiantil.</p>
+
+      <div class="field">
+        <label for="usuario">Usuario</label>
+        <div class="field__box">
+          <svg class="icon"><use href="#user"/></svg>
+          <input id="usuario" name="usuario" type="text" placeholder="Ingresa tu usuario" autocomplete="username">
+        </div>
+        <p class="field__error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="clave">Contraseña</label>
+        <div class="field__box">
+          <svg class="icon"><use href="#lock"/></svg>
+          <input id="clave" name="clave" type="password" placeholder="Ingresa tu contraseña" autocomplete="current-password">
+          <button type="button" id="toggle-clave" aria-label="Mostrar contraseña"><svg class="icon"><use href="#eye"/></svg></button>
+        </div>
+        <p class="field__error" role="alert"></p>
+      </div>
+
+      <a class="link" href="#">¿Olvidaste tu contraseña?</a>
+      <button class="btn btn--primary" type="submit">Acceder <svg class="icon"><use href="#arrow"/></svg></button>
+      <div class="divider">¿Es tu primera vez?</div>
+      <a class="btn btn--outline" href="#">Crear usuario</a>
+    </form>
+
+    <p class="access__secure"><svg class="icon"><use href="#shield"/></svg>Tu información, en un espacio seguro.</p>
+  </section>
+</main>
+<script src="js/login.js"></script>
+</body>
+</html>

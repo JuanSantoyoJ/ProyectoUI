@@ -1,0 +1,18 @@
+/* Variables de diseño tomadas de Figma */
+:root {
+  --color-primary: #3d3dea;
+  --color-primary-dark: #2c2cc4;
+  --color-primary-soft: #ececfd;
+  --color-secondary: #929496;
+  --color-text: #1f2430;
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-border: #e4e6ea;
+  --color-footer: #232a35;
+  --color-error: #c62828;
+
+  --font-main: 'Open Sans', system-ui, sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --container: 1160px;
+}
