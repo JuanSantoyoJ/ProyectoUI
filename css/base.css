@@ -7,21 +7,19 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selección de texto personalizada estilo tech */
 ::selection {
   background-color: var(--color-primary);
   color: #ffffff;
 }
 
-/* Jerarquía tipográfica moderna (letter-spacing negativo sutil en títulos grandes) */
+/* Títulos usando Poppins para identidad de marca y encabezados */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-brand);
   font-weight: var(--font-bold);
   line-height: 1.25;
   color: var(--color-text-main);
-  letter-spacing: -0.02em;
 }
 
 h1 { font-size: var(--text-3xl); }
@@ -33,40 +31,16 @@ p {
   color: var(--color-text-secondary);
 }
 
-/* Enlaces con transición suave */
 a {
   transition: color var(--transition-fast);
-  
 }
 
-/* Scrollbar minimalista */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-main);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
-}
-
-/* Clases utilitarias globales */
 .text-muted {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
 }
 
-.text-gradient {
-  background: var(--gradient-tech);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Destacado de texto en color plano Tec */
+.text-tec {
+  color: var(--color-primary);
 }
