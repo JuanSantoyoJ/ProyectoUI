@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/dropdowns.css">
+  <link rel="stylesheet" href="css/perfil.css">
+
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -29,21 +32,89 @@
 <header class="header">
   <div class="container header__in">
     <a href="index.html"><img class="header__logo" src="assets/img/logo-unab.png" alt="Universidad UNAB"></a>
-    <nav class="nav" aria-label="Principal">
-      <button type="button" aria-expanded="false">Servicios académicos <svg class="icon"><use href="#chev"/></svg></button>
-      <button type="button" aria-expanded="false">Trámites <svg class="icon"><use href="#chev"/></svg></button>
+      <button type="button" aria-expanded="false" aria-controls="panel-servicios">Servicios académicos <svg class="icon"><use href="#chev"/></svg></button>
+      <button type="button" aria-expanded="false" aria-controls="panel-tramites">Trámites <svg class="icon"><use href="#chev"/></svg></button>
       <button type="button" aria-expanded="false">Eventos <svg class="icon"><use href="#chev"/></svg></button>
     </nav>
     <div class="header__tools">
       <button class="icon-btn" aria-label="Buscar"><svg class="icon"><use href="#search"/></svg></button>
       <button class="icon-btn" aria-label="Notificaciones"><svg class="icon"><use href="#bell"/></svg><span class="badge"></span></button>
-      <button class="user" aria-label="Mi espacio">
+      <button class="user" type="button" aria-expanded="false" aria-controls="panel-perfil">
         <span class="user__avatar">ME</span>
         <span class="user__txt"><span class="user__name">Mi espacio</span><br><span class="user__role">Estudiante</span></span>
-        <svg class="icon"><use href="#chev"/></svg><span class="user__role">Estudiante</span></span>
         <svg class="icon"><use href="#chev"/></svg>
       </button>
     </div>
+  </div>
+
+  <div class="container menus">
+    <nav class="nav" aria-label="Principal"> 
+  <!-- TRÁMITES -->
+  <div class="panel" id="panel-tramites" hidden>
+    <div class="panel__cabecera">
+      <h2 class="panel__titulo">Trámites</h2>
+      <button class="panel__cerrar" data-cerrar>Cerrar</button>
+    </div>
+    <h3 class="grupo__titulo">Consultas</h3>
+    <ul class="lista">
+      <li><a class="item" href="#">Cronogramas académicos</a></li>
+      <li><a class="item item--sub" href="https://unab.edu.co/apoyo-financiero/">Mecanismos de financiación</a></li>
+      <li><a class="item item--sub" href="https://cupones.unab.edu.co/loginCosmos.jsp">Cupones</a></li>
+      <li><a class="item item--sub" href="https://clic.kayako.com/">CLIC</a></li>
+    </ul>
+    <p class="panel__pie">¿No encuentras lo que buscas? <a href="#">Ver todos los trámites →</a></p>
+  </div>
+ 
+  <!-- SERVICIOS ACADÉMICOS -->
+  <div class="panel panel--servicios" id="panel-servicios" hidden>
+    <div class="panel__cabecera">
+      <h2 class="panel__titulo">Servicios académicos</h2>
+      <button class="panel__cerrar" data-cerrar>Cerrar</button>
+    </div>
+    <div class="columnas">
+      <div class="columna">
+        <h3 class="grupo__titulo">Becas y descuentos</h3>
+        <ul class="lista">
+          <li><a class="item" href="https://unab.edu.co/donaciones/fondo-de-becas-rafaelardiladuarte/">Fondo de Becas UNAB</a></li>
+        </ul>
+        <h3 class="grupo__titulo">Bienestar universitario</h3>
+        <ul class="lista">
+          <li><a class="item" href="#">Desarrollo humano</a></li>
+          <li><a class="item" href="#">Deportes</a></li>
+          <li><a class="item" href="https://gateway1.ecollect.co/eCollectPlus/Selling/Services.aspx?tabId=7e0a453c-8be0-4994-8123-9c0a30bac5f9">Pagos</a></li>
+          <li><a class="item" href="#">Cultura</a></li>
+          <li><a class="item" href="#">Horas libres</a></li>
+        </ul>
+      </div>
+      <div class="columna">
+        <h3 class="grupo__titulo">Centros</h3>
+        <ul class="lista">
+          <li><a class="item" href="https://unab.edu.co/centro-ehle/">EHLE</a></li>
+          <li><a class="item" href="https://apolo.unab.edu.co/es/organisations/centro-de-investigaci%C3%B3n-en-bio-econom%C3%ADa-circular/">Centro de Bioeconomía Circular</a></li>
+        </ul>
+        <h3 class="grupo__titulo">Unidades</h3>
+        <ul class="lista">
+          <li><a class="item" href="#">Departamento de Lenguas</a></li>
+          <li><a class="item" href="#">Éxito Estudiantil</a></li>
+        </ul>
+     </div>
+    </div> 
+    <p class="panel__pie">¿No encuentras lo que buscas? <a href="#">Ver todos los servicios →</a></p>
+  </div>
+ 
+  <!-- PERFIL -->
+  <div class="panel panel--perfil" id="panel-perfil" hidden>
+    <div class="panel__cabecera">
+      <h2 class="panel__titulo">Perfil</h2>
+      <button class="panel__cerrar" data-cerrar>Cerrar</button>
+    </div>
+    <ul class="lista">
+      <li><a class="item" href="pages/perfil.html">Mi perfil</a></li>
+      <li><a class="item" href="#">Editar perfil</a></li>
+      <li><a class="item" href="#">Cerrar sesión</a></li>
+    </ul>
+  </div>
+</nav>
   </div>
 </header>
 
@@ -125,6 +196,7 @@
     <div class="footer__bottom"><span>© 2026 UNAB · Universidad Autónoma de Bucaramanga</span><span>Propuesta de interfaz · Contenidos y fechas de ejemplo</span><span><a href="#">Privacidad</a> &nbsp; <a href="#">Accesibilidad</a></span></div>
   </div>
 </footer>
+<script src="js/navbar.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

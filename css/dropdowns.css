@@ -1,0 +1,118 @@
+/* Desplegables del header: Servicios académicos, Trámites y Mi espacio.
+   Usa variables de variables.css; los valores después de la coma son respaldo. */
+
+.menus {
+  position: relative;
+  font-family: "Open Sans", system-ui, sans-serif;
+}
+.panel__cerrar:focus-visible,
+.item:focus-visible,
+.panel__pie a:focus-visible { outline: 2px solid var(--color-primary, #3d3dea); outline-offset: 2px; }
+
+/* Panel base */
+.panel {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  z-index: 100;
+  width: min(440px, calc(100vw - 3rem));
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--color-borde, #e8e8ec);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(35, 38, 47, 0.14);
+}
+.panel[hidden] { display: none; }
+.panel--perfil { left: auto; right: 0; width: min(320px, calc(100vw - 3rem)); }
+.panel--servicios { width: min(960px, calc(100vw - 3rem)); }
+
+.panel__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem 1.25rem 3rem;
+  border-bottom: 1px solid var(--color-borde, #e8e8ec);
+}
+.panel__titulo {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-secundario, #929496);
+}
+.panel__cerrar {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-fondo-suave, #f1f2f4);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b6e75;
+  cursor: pointer;
+}
+
+.grupo__titulo {
+  margin: 0;
+  padding: 1.25rem 3rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-secundario, #929496);
+}
+.lista { margin: 0; padding: 0; list-style: none; }
+
+/* Fila de enlace: chevron naranja a ambos lados */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1rem 3rem;
+  border-bottom: 1px solid var(--color-borde-suave, #f0f0f2);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-texto, #23262f);
+  text-decoration: none;
+}
+.item:hover { background: var(--color-fondo-suave, #f7f7f9); }
+.item::before,
+.item::after {
+  content: "";
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 2.5px solid var(--color-acento, #e07b39);
+  border-right: 2.5px solid var(--color-acento, #e07b39);
+  transform: rotate(45deg);
+}
+.item::after { margin-left: auto; }
+.item--sub { padding-left: 4.5rem; }
+
+/* Servicios académicos: 3 columnas */
+.columnas { display: grid; grid-template-columns: repeat(3, 1fr); }
+.columna + .columna { border-left: 1px solid var(--color-borde, #e8e8ec); }
+.columna .item { padding-left: 1.5rem; padding-right: 1.5rem; }
+.columna .grupo__titulo { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+/* Pie */
+.panel__pie {
+  padding: 1.25rem 3rem;
+  border-top: 1px solid var(--color-borde, #e8e8ec);
+  color: var(--color-secundario, #929496);
+}
+.panel__pie a {
+  margin-left: 0.4rem;
+  font-weight: 600;
+  color: var(--color-primary, #3d3dea);
+  text-decoration: none;
+}
+.panel__pie a:hover { text-decoration: underline; }
+
+@media (max-width: 800px) {
+  .columnas { grid-template-columns: 1fr; }
+  .columna + .columna { border-left: 0; border-top: 1px solid var(--color-borde, #e8e8ec); }
+  .panel__cabecera, .grupo__titulo, .item, .panel__pie { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .item--sub { padding-left: 2.75rem; }
+}
