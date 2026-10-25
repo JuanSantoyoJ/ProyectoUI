@@ -9,3 +9,4 @@ img { max-width: 100%; display: block; }
 .container { width: min(100% - 48px, var(--container)); margin-inline: auto; }
 :focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.brand__logo, .header__logo, .footer__logo { filter: brightness(0) invert(1); }
