@@ -116,3 +116,10 @@
   .panel__cabecera, .grupo__titulo, .item, .panel__pie { padding-left: 1.5rem; padding-right: 1.5rem; }
   .item--sub { padding-left: 2.75rem; }
 }
+
+/* El botón "Cerrar" no debe heredar el color blanco de los botones del header */
+.panel .panel__cerrar {
+  background: var(--color-fondo-suave, #f1f2f4);
+  color: #6b6e75;
+}
+.panel .panel__cerrar:hover { background: #e6e7ea; }

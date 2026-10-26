@@ -1,0 +1,19 @@
+@media (min-width: 1920px) {
+  /* Escala el texto y todo lo que esté en rem */
+  html { font-size: 112.5%; } /* 18px */
+ 
+  /* Contenedor más ancho: 90rem = 1620px a este tamaño de letra */
+  .container {
+    width: min(100% - 6rem, 90rem);
+    max-width: none;
+    margin-inline: auto;
+  }
+}
+ 
+@media (min-width: 2400px) {
+  html { font-size: 125%; } /* 20px */
+ 
+  /* 100rem = 2000px a este tamaño de letra */
+  .container { width: min(100% - 6rem, 100rem); }
+}
+ 

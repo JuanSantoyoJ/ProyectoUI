@@ -1,0 +1,75 @@
+/* Header adaptable. Enlázalo DESPUÉS de home.css y dropdowns.css. */
+
+.menu-toggle { display: none; }
+
+/* Búsqueda, notificaciones y "Mi espacio" pegados al borde derecho */
+.header__tools { margin-left: auto; }
+
+/* Pantallas medianas: compactar la barra */
+@media (max-width: 1100px) {
+  .header .nav { gap: 1rem; }
+  .header .nav button { font-size: 0.95rem; }
+  .header__tools { gap: 0.5rem; }
+}
+
+/* Tablet y móvil: logo + herramientas arriba, enlaces en el menú hamburguesa */
+@media (max-width: 900px) {
+  .header__in { flex-wrap: wrap; gap: 0.75rem; padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .header__logo { height: 40px; width: auto; }
+
+  .header__in > a { order: 1; }
+  .header__tools { order: 2; margin-left: auto; }
+
+  .menu-toggle {
+    order: 3;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  .menu-toggle:hover,
+  .menu-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.15); }
+  .menu-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .menu-toggle .icon { width: 26px; height: 26px; }
+
+  .header .nav {
+    order: 4;
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .header .nav.is-open { display: flex; }
+  .header .nav button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0.25rem;
+    font-size: 1.05rem;
+    text-align: left;
+  }
+
+  /* Paneles a todo el ancho del contenedor */
+  .panel,
+  .panel--servicios,
+  .panel--perfil { left: 0; right: 0; width: auto; }
+  .panel { max-height: 70vh; }
+}
+
+/* Móvil: solo avatar en "Mi espacio" */
+@media (max-width: 600px) {
+  .user__txt { display: none; }
+  .header__logo { height: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header * { transition: none !important; }
+}
