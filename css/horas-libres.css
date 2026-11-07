@@ -1,0 +1,45 @@
+/* Pie de página siempre abajo */
+body.hl { min-height: 100vh; display: flex; flex-direction: column; }
+body.hl main { flex: 1; padding-bottom: 56px; }
+.pagebar { align-items: center; }
+.pagebar a:hover { text-decoration: underline; }
+
+.hl__title { margin-top: 24px; font-size: 36px; font-weight: 700; line-height: 1.2; }
+.hl__intro { margin: 10px 0 36px; font-size: 16px; color: var(--color-secondary); }
+.hl__sub { font-size: 14px; color: var(--color-secondary); }
+
+/* Tarjeta de actividades */
+.hl__card { width: min(100%, 860px); margin: 0 auto 40px; padding: 24px 16px 8px; }
+.hl__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 0 0 20px 0; }
+.hl__chip { padding: 5px 12px; border-radius: 8px; background: var(--color-bg); color: var(--color-secondary); font-size: 13px; white-space: nowrap; }
+.hl__scroll { overflow-x: auto; }
+.hl__table { min-width: 640px; }
+.hl__table th, .hl__table td { padding-right: 16px; }
+.hl__table th:last-child, .hl__table td:last-child { padding-right: 0; }
+.hl__table td { padding-top: 18px; padding-bottom: 18px; font-size: 15px; }
+.hl__table td:first-child { padding-left: 0; border-left: 0; font-weight: 400; }
+.hl__table td:last-child { color: inherit; }
+.hl__table th.num, .hl__table td.num { text-align: right; }
+.act__name { font-weight: 600; }
+.act__type { font-size: 14px; color: var(--color-secondary); }
+.hl-pill { display: inline-block; min-width: 44px; padding: 6px 12px; border-radius: 8px; background: var(--color-primary-soft); color: var(--color-primary); font-weight: 700; text-align: center; }
+.hl__empty { padding: 32px 0; text-align: center; color: var(--color-secondary); }
+
+/* Progreso */
+.progress { padding: 24px 32px; }
+.progress__top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }
+.progress__top h2 { font-size: 20px; }
+.progress__count { font-size: 22px; font-weight: 600; white-space: nowrap; }
+.progress__count b { font-size: 36px; font-weight: 700; color: var(--color-primary); }
+.progress__count small { font-size: 16px; font-weight: 400; color: var(--color-secondary); }
+.bar { height: 8px; border-radius: 999px; background: var(--color-primary-soft); overflow: hidden; }
+.bar__fill { width: 0; height: 100%; border-radius: inherit; background: var(--color-primary); transition: width .8s ease; }
+.progress__foot { display: flex; justify-content: space-between; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+.progress__pct { font-size: 14px; font-weight: 600; color: var(--color-primary); }
+
+@media (max-width: 600px) {
+  .hl__title { font-size: 28px; }
+  .progress { padding: 20px 16px; }
+  .progress__top { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { .bar__fill { transition: none; } }
