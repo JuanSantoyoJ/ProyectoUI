@@ -1,0 +1,54 @@
+/* Página: Asignaturas cursadas. */
+body.as {
+  --ok: #1e8a54;      --ok-bg: #eaf6ef;
+  --bad: #c62828;     --bad-bg: #fdecee;
+  --now: #a16207;     --now-bg: #fff6dd;
+  --none: #6b7280;    --none-bg: #f1f2f4;
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+body.as main { flex: 1; padding-bottom: 40px; }
+body.as .pagebar { align-items: center; }
+body.as .pagebar a:hover { text-decoration: underline; }
+
+.as__title { margin-top: 24px; font-size: 36px; font-weight: 700; line-height: 1.2; }
+.as__intro { margin: 10px 0 24px; font-size: 16px; color: var(--color-secondary); }
+.as__career { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; font-size: 14px; }
+.as__career strong { font-size: 16px; font-weight: 600; margin-right: 12px; }
+.as__chip { padding: 5px 12px; border-radius: 8px; background: #eef0f3; color: var(--color-secondary); font-size: 13px; }
+.as__totals { color: var(--color-secondary); }
+
+/* Rejilla de semestres */
+.as__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.sem { padding: 20px 20px 14px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.sem__head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border); }
+.sem__head h2 { font-size: 18px; font-weight: 700; }
+.sem__head span { font-size: 14px; color: var(--color-secondary); white-space: nowrap; }
+
+.sem table { width: 100%; border-collapse: separate; border-spacing: 0 4px; margin-top: 8px; font-size: 15px; }
+.sem th { padding: 4px 8px; border: 0; font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--color-secondary); }
+.sem th:first-child { padding-left: 36px; }
+.sem th:last-child, .sem td:last-child { width: 44px; text-align: center; }
+.sem td { padding: 7px 8px; border: 0; }
+.sem td:first-child { display: flex; align-items: center; gap: 10px; border-radius: 8px 0 0 8px; }
+.sem td:last-child { border-radius: 0 8px 8px 0; font-weight: 500; color: inherit; }
+.sem .icon { width: 20px; height: 20px; }
+
+.st--ok td   { background: var(--ok-bg); }   .st--ok .icon   { color: var(--ok); }
+.st--bad td  { background: var(--bad-bg); }  .st--bad .icon  { color: var(--bad); }
+.st--now td  { background: var(--now-bg); }  .st--now .icon  { color: var(--now); }
+.st--none .icon { color: var(--none); }
+
+/* Leyenda */
+.as__legend { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; font-size: 14px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 8px; }
+.chip--ok { background: var(--ok-bg); color: var(--ok); }
+.chip--bad { background: var(--bad-bg); color: var(--bad); }
+.chip--now { background: var(--now-bg); color: var(--now); }
+.chip--none { background: var(--none-bg); color: var(--none); }
+.as__note { margin-top: 12px; text-align: center; font-size: 13px; color: var(--color-secondary); }
+
+@media (max-width: 1200px) { .as__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) {
+  .as__title { font-size: 28px; }
+  .as__grid { grid-template-columns: 1fr; }
+}
