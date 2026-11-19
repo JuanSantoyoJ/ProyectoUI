@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de notas · Portal estudiantil UNAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/dropdowns.css">
+  <link rel="stylesheet" href="../css/header-responsive.css">
+  <link rel="stylesheet" href="../css/pantallas-grandes.css">
+  <link rel="stylesheet" href="../css/calculadora-notas.css">
+</head>
+<body class="calc-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="sliders" viewBox="0 0 24 24"><path d="M4 6h9m4 0h3M4 12h3m4 0h9M4 18h9m4 0h3"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="15" cy="18" r="2"/></symbol>
+    <symbol id="book" viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3"/></symbol>
+    <symbol id="calc-icon" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01"/></symbol>
+    <symbol id="check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1"/><rect x="17" y="14" width="4" height="6" rx="1"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container header__in">
+      <a href="../index.html"><img class="header__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB"></a>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+      <button type="button" aria-expanded="false" aria-controls="panel-servicios">Servicios académicos <svg class="icon"><use href="#chev"/></svg></button>
+      <button type="button" aria-expanded="false" aria-controls="panel-tramites">Trámites <svg class="icon"><use href="#chev"/></svg></button>
+      <button type="button">Eventos <svg class="icon"><use href="#chev"/></svg></button>
+      </nav>
+      <div class="header__tools">
+        <button class="icon-btn" aria-label="Buscar"><svg class="icon"><use href="#search"/></svg></button>
+        <button class="icon-btn" aria-label="Notificaciones"><svg class="icon"><use href="#bell"/></svg><span class="badge"></span></button>
+        <button class="user" type="button" aria-expanded="false" aria-controls="panel-perfil">
+          <span class="user__avatar">ME</span>
+          <span class="user__txt"><span class="user__name">Mi espacio</span><br><span class="user__role">Estudiante</span></span>
+          <svg class="icon"><use href="#chev"/></svg>
+        </button>
+        <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Abrir menú"><svg class="icon"><use href="#menu"/></svg></button>
+      </div>
+    </div>
+    <div class="container menus">
+      <nav aria-label="Menús">
+        <div class="panel panel--servicios" id="panel-servicios" hidden>
+          <div class="panel__cabecera"><h2 class="panel__titulo">Servicios académicos</h2></div>
+          <div class="columnas">
+            <div class="columna">
+              <h3 class="grupo__titulo">Consultas académicas</h3>
+              <ul class="lista">
+                <li><a class="item" href="asignaturas.html">Asignaturas cursadas</a></li>
+                <li><a class="item" href="horario.html">Horario</a></li>
+                <li><a class="item" href="calculadora-notas.html" aria-current="page">Calculadora de notas</a></li>
+              </ul>
+            </div>
+            <div class="columna">
+              <h3 class="grupo__titulo">Bienestar universitario</h3>
+              <ul class="lista"><li><a class="item" href="horas-libres.html">Horas libres</a></li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel" id="panel-tramites" hidden>
+          <div class="panel__cabecera"><h2 class="panel__titulo">Trámites</h2></div>
+          <ul class="lista"><li><a class="item" href="#">Cronogramas académicos</a></li></ul>
+        </div>
+        <div class="panel panel--perfil" id="panel-perfil" hidden>
+          <div class="panel__cabecera"><h2 class="panel__titulo">Perfil</h2></div>
+          <ul class="lista"><li><a class="item" href="perfil.html">Mi perfil</a></li><li><a class="item" href="../login.html">Cerrar sesión</a></li></ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container pagebar">
+      <nav aria-label="Ruta de navegación"><a href="../index.html">Portal estudiantil</a> / Servicios académicos / Calculadora de notas</nav>
+      <div class="pagebar__right"><strong>Periodo 2026-2</strong></div>
+    </div>
+
+    <div class="container">
+      <h1 class="calc__title">Calculadora de notas</h1>
+      <p class="calc__intro">Planea tu próximo resultado. Ingresa tus notas y descubre cuánto necesitas para alcanzar tu meta.</p>
+
+      <div class="calc__layout">
+        <aside class="calc__side">
+          <section class="card calc__settings" aria-labelledby="settings-title">
+            <h2 id="settings-title"><svg class="icon"><use href="#sliders"/></svg>Configuración</h2>
+            <label class="calc__label" for="goal">¿Qué nota quieres alcanzar?</label>
+            <div class="calc__goal">
+              <input id="goal" type="text" inputmode="decimal" value="3,50" autocomplete="off" aria-describedby="goal-help">
+              <span>/ 5,00</span>
+            </div>
+            <p class="calc__hint" id="goal-help">Ingresa tu meta para la nota definitiva.</p>
+            <div class="calc__scale"><span>Escala de calificación</span><strong>0,00 a 5,00</strong></div>
+          </section>
+          <p class="calc__disclaimer"><svg class="icon"><use href="#info"/></svg>Esta simulación es orientativa. No modifica tus calificaciones oficiales.</p>
+        </aside>
+
+        <section class="card calc__work" aria-labelledby="evaluations-title">
+          <div class="calc__work-head">
+            <div><h2 id="evaluations-title">Tus evaluaciones</h2><p>Deja sin nota la evaluación que aún no has presentado.</p></div>
+            <span class="calc__sample" id="sample-badge">Datos de ejemplo</span>
+          </div>
+          <div class="calc__table-wrap">
+            <div class="calc__table-head" aria-hidden="true">
+              <span>Evaluación</span><span>Valor de la nota</span><span>Porcentaje</span><span></span>
+            </div>
+            <div id="evaluations" class="calc__evaluations"></div>
+          </div>
+          <div class="calc__actions">
+            <button type="button" class="calc__add" id="add-evaluation"><svg class="icon"><use href="#plus"/></svg>Añadir evaluación</button>
+            <p class="calc__total" id="percentage-total" role="status"><svg class="icon"><use href="#check-circle"/></svg>Porcentaje total: <strong>100 %</strong></p>
+          </div>
+          <div class="calc__bottom-actions">
+            <button type="button" class="calc__clear" id="clear-data">Limpiar datos</button>
+            <button type="button" class="calc__submit" id="calculate"><svg class="icon"><use href="#calc-icon"/></svg>Calcular notas</button>
+          </div>
+          <section class="calc__result" id="result" aria-live="polite" aria-labelledby="result-title"></section>
+        </section>
+
+        <aside class="card calc__manual">
+          <h2><svg class="icon"><use href="#book"/></svg>Manual de uso</h2>
+          <ol class="calc__steps">
+            <li><span>1</span><div><strong>Define tu meta</strong><p>Escribe la nota que quieres obtener al finalizar la materia.</p></div></li>
+            <li><span>2</span><div><strong>Ingresa tus evaluaciones</strong><p>Añade cada nota y su porcentaje. Incluye la evaluación pendiente sin asignarle una nota.</p></div></li>
+            <li><span>3</span><div><strong>Calcula y planea</strong><p>Consulta tu acumulado y la nota que necesitas en el porcentaje restante.</p></div></li>
+          </ol>
+          <div class="calc__reminder"><h3>Ten en cuenta</h3><p>Los porcentajes deben sumar 100 %. Si tienes varias evaluaciones pendientes, el resultado es el promedio que necesitas entre ellas.</p></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <img class="footer__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB">
+        <div><h3>Portal estudiantil</h3><p>Un espacio para conectar con tu universidad,<br>acompañar tu aprendizaje y vivir el campus.</p></div>
+        <div><h3>Enlaces útiles</h3><div class="footer__links"><a href="#">Sitio UNAB</a><a href="#">Biblioteca</a><a href="#">Bienestar</a></div></div>
+        <div class="calc__help"><svg class="icon"><use href="#headset"/></svg><div><h3>Te acompañamos</h3><a href="#">Centro de ayuda</a></div></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 UNAB · Universidad Autónoma de Bucaramanga</span><span>Propuesta de interfaz · Contenidos y fechas de ejemplo</span><span><a href="#">Privacidad</a> &nbsp; <a href="#">Accesibilidad</a></span></div>
+    </div>
+  </footer>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/calculadora-notas.js"></script>
+</body>
+</html>
