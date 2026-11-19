@@ -92,6 +92,7 @@
         <div class="container header__in">
             <a href="../index.html"><img class="header__logo" src="../assets/img/logo-unab.png"
                     alt="Universidad UNAB"></a>
+            <nav class="nav" id="nav-principal" aria-label="Principal">
             <button type="button" aria-expanded="false" aria-controls="panel-servicios">Servicios académicos <svg
                     class="icon">
                     <use href="#chev" />
@@ -99,9 +100,7 @@
             <button type="button" aria-expanded="false" aria-controls="panel-tramites">Trámites <svg class="icon">
                     <use href="#chev" />
                 </svg></button>
-            <button type="button" aria-expanded="false">Eventos <svg class="icon">
-                    <use href="#chev" />
-                </svg></button>
+            <a class="header__page-link" href="eventos.html">Eventos</a>
             </nav>
             <div class="header__tools">
                 <button class="icon-btn" aria-label="Buscar"><svg class="icon">
@@ -118,11 +117,14 @@
                         <use href="#chev" />
                     </svg>
                 </button>
+                <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">
+                    <svg class="icon"><use href="#menu"/></svg>
+                </button>
             </div>
         </div>
 
         <div class="container menus">
-            <nav class="nav" aria-label="Principal">
+            <nav aria-label="Menús">
                 <!-- TRÁMITES -->
                 <div class="panel" id="panel-tramites" hidden>
                     <div class="panel__cabecera">
@@ -155,6 +157,12 @@
                                         href="https://unab.edu.co/donaciones/fondo-de-becas-rafaelardiladuarte/">Fondo
                                         de Becas UNAB</a></li>
                             </ul>
+                            <h3 class="grupo__titulo">Consultas académicas</h3>
+                            <ul class="lista">
+                                <li><a class="item" href="asignaturas.html">Asignaturas cursadas</a></li>
+                                <li><a class="item" href="horario.html">Horario</a></li>
+                                <li><a class="item" href="calculadora-notas.html">Calculadora de notas</a></li>
+                            </ul>
                             <h3 class="grupo__titulo">Bienestar universitario</h3>
                             <ul class="lista">
                                 <li><a class="item" href="#">Desarrollo humano</a></li>
@@ -164,7 +172,6 @@
                                 </li>
                                 <li><a class="item" href="#">Cultura</a></li>
                                 <li><a class="item" href="../pages/horas-libres.html">Horas libres</a></li>
-                                <li><a class="item" href="calculadora-notas.html">Calculadora de notas</a></li>
                             </ul>
                         </div>
                         <div class="columna">
@@ -193,7 +200,7 @@
                     </div>
                     <ul class="lista">
                         <li><a class="item" href="../pages/perfil.html">Mi perfil</a></li>
-                        <li><a class="item" href="#">Editar perfil</a></li>
+                        <li><a class="item" href="editar-perfil.html">Editar perfil</a></li>
                         <li><a class="item" href="../login.html">Cerrar sesión</a></li>
                     </ul>
                 </div>

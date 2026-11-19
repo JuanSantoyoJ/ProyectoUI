@@ -103,6 +103,7 @@ function renderCursos() {
 const dialogo = document.getElementById('dialogo-notas');
 const contenedor = document.getElementById('np');
 let cursoAbierto = null;
+let botonNotasAbierto = null;
 
 function renderNotas(c) {
   const { docente, evaluaciones, observaciones } = c.detalle;
@@ -207,14 +208,17 @@ function descargarComprobante(c) {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = `notas-${c.codigo}.csv`;
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(a.href);
+  a.remove();
+  window.setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
-function abrirNotas(codigo) {
+function abrirNotas(codigo, boton) {
   const c = porCodigo(codigo);
   if (!c || !c.detalle) return;
   cursoAbierto = c;
+  botonNotasAbierto = boton;
   renderNotas(c);
   dialogo.showModal();            // se centra solo, bloquea el fondo y se cierra con Esc
   contenedor.scrollTop = 0;
@@ -223,7 +227,7 @@ function abrirNotas(codigo) {
 // Clic en la lupa de la tabla
 document.getElementById('cursos').addEventListener('click', (e) => {
   const boton = e.target.closest('.lupa');
-  if (boton) abrirNotas(boton.dataset.codigo);
+  if (boton) abrirNotas(boton.dataset.codigo, boton);
 });
 
 // Clics dentro de la ventana: cerrar, descargar, enviar
@@ -238,6 +242,19 @@ dialogo.addEventListener('click', (e) => {
   } else if (accion === 'correo') {
     estado.textContent = 'Te enviaremos el comprobante a tu correo institucional (simulado).';
   }
+});
+
+dialogo.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && dialogo.open) {
+    e.preventDefault();
+    dialogo.close();
+  }
+});
+
+dialogo.addEventListener('close', () => {
+  cursoAbierto = null;
+  if (botonNotasAbierto?.isConnected) botonNotasAbierto.focus();
+  botonNotasAbierto = null;
 });
 
 renderCalendario();

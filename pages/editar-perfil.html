@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editar perfil · Portal estudiantil UNAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/dropdowns.css">
+  <link rel="stylesheet" href="../css/header-responsive.css">
+  <link rel="stylesheet" href="../css/pantallas-grandes.css">
+  <link rel="stylesheet" href="../css/portal-pages.css">
+</head>
+<body class="portal-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="pencil" viewBox="0 0 24 24"><path d="m4 20 1-4L16 5l3 3-11 11zM14 7l3 3"/></symbol>
+  </svg>
+  <header class="header">
+    <div class="container header__in">
+      <a href="../index.html"><img class="header__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB"></a>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <button type="button" aria-expanded="false" aria-controls="panel-servicios">Servicios académicos <svg class="icon"><use href="#chev"/></svg></button>
+        <button type="button" aria-expanded="false" aria-controls="panel-tramites">Trámites <svg class="icon"><use href="#chev"/></svg></button>
+        <a class="header__page-link" href="eventos.html">Eventos</a>
+      </nav>
+      <div class="header__tools">
+        <button class="icon-btn" type="button" aria-label="Buscar"><svg class="icon"><use href="#search"/></svg></button>
+        <button class="icon-btn" type="button" aria-label="Notificaciones"><svg class="icon"><use href="#bell"/></svg><span class="badge"></span></button>
+        <button class="user" type="button" aria-expanded="false" aria-controls="panel-perfil"><span class="user__avatar">ME</span><span class="user__txt"><span class="user__name">Mi espacio</span><br><span class="user__role">Estudiante</span></span><svg class="icon"><use href="#chev"/></svg></button>
+        <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Abrir menú"><svg class="icon"><use href="#menu"/></svg></button>
+      </div>
+    </div>
+    <div class="container menus"><nav aria-label="Menús">
+      <div class="panel panel--servicios" id="panel-servicios" hidden><div class="panel__cabecera"><h2 class="panel__titulo">Servicios académicos</h2></div><div class="columnas">
+        <div class="columna"><h3 class="grupo__titulo">Consultas académicas</h3><ul class="lista"><li><a class="item" href="asignaturas.html">Asignaturas cursadas</a></li><li><a class="item" href="horario.html">Horario</a></li><li><a class="item" href="calculadora-notas.html">Calculadora de notas</a></li></ul></div>
+        <div class="columna"><h3 class="grupo__titulo">Bienestar universitario</h3><ul class="lista"><li><a class="item" href="horas-libres.html">Horas libres</a></li></ul></div>
+      </div></div>
+      <div class="panel" id="panel-tramites" hidden><div class="panel__cabecera"><h2 class="panel__titulo">Trámites</h2></div><ul class="lista"><li><a class="item" href="#">Cronogramas académicos</a></li></ul></div>
+      <div class="panel panel--perfil" id="panel-perfil" hidden><div class="panel__cabecera"><h2 class="panel__titulo">Perfil</h2></div><ul class="lista"><li><a class="item" href="perfil.html">Mi perfil</a></li><li><a class="item" href="editar-perfil.html" aria-current="page">Editar perfil</a></li><li><a class="item" href="../login.html">Cerrar sesión</a></li></ul></div>
+    </nav></div>
+  </header>
+  <main>
+    <div class="container pagebar"><nav aria-label="Ruta de navegación"><a href="../index.html">Portal estudiantil</a> / <a href="perfil.html">Mi perfil</a> / Editar perfil</nav><div class="pagebar__right"><strong>Periodo 2026-2</strong></div></div>
+    <section class="container">
+      <h1 class="portal-title">Editar perfil</h1>
+      <p class="portal-intro">Actualiza tus datos de contacto y la información de tu perfil.</p>
+      <form class="portal-form" id="edit-profile-form">
+        <div class="portal-form__heading"><svg class="icon"><use href="#pencil"/></svg><div><h2>Información personal</h2><p>Los campos marcados son obligatorios.</p></div></div>
+        <div class="portal-form__grid">
+          <div class="portal-field"><label for="profile-name">Nombre completo</label><input id="profile-name" name="name" type="text" autocomplete="name" required minlength="3"></div>
+          <div class="portal-field"><label for="profile-email">Correo institucional</label><input id="profile-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="portal-field"><label for="profile-program">Programa académico</label><input id="profile-program" name="program" type="text" required></div>
+          <div class="portal-field"><label for="profile-phone">Teléfono de contacto</label><input id="profile-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="phone-help"><small id="phone-help">Opcional · Ingresa un número de contacto.</small></div>
+        </div>
+        <p class="portal-form__notice">Esta es una propuesta de interfaz. Los cambios se guardan en este navegador y no se envían a sistemas oficiales.</p>
+        <p class="portal-form__message" id="profile-message" role="status" aria-live="polite"></p>
+        <div class="portal-form__actions"><a class="portal-button portal-button--secondary" href="perfil.html">Cancelar</a><button class="portal-button" type="submit">Guardar cambios</button></div>
+      </form>
+    </section>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer__top"><img class="footer__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB"><div><h3>Portal estudiantil</h3><p>Un espacio para conectar con tu universidad,<br>acompañar tu aprendizaje y vivir el campus.</p></div><div><h3>Enlaces útiles</h3><div class="footer__links"><a href="https://unab.edu.co/">Sitio UNAB</a><a href="#">Biblioteca</a><a href="#">Bienestar</a></div></div><div><h3>Te acompañamos</h3><a href="#">Centro de ayuda</a></div></div><div class="footer__bottom"><span>© 2026 UNAB · Universidad Autónoma de Bucaramanga</span><span>Propuesta de interfaz · Contenidos y fechas de ejemplo</span><span><a href="#">Privacidad</a> &nbsp; <a href="#">Accesibilidad</a></span></div></div></footer>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/perfil.js"></script>
+</body>
+</html>

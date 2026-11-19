@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventos · Portal estudiantil UNAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/dropdowns.css">
+  <link rel="stylesheet" href="../css/header-responsive.css">
+  <link rel="stylesheet" href="../css/pantallas-grandes.css">
+  <link rel="stylesheet" href="../css/portal-pages.css">
+</head>
+<body class="portal-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4m6-4v4"/></symbol>
+    <symbol id="location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  </svg>
+  <header class="header">
+    <div class="container header__in">
+      <a href="../index.html"><img class="header__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB"></a>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <button type="button" aria-expanded="false" aria-controls="panel-servicios">Servicios académicos <svg class="icon"><use href="#chev"/></svg></button>
+        <button type="button" aria-expanded="false" aria-controls="panel-tramites">Trámites <svg class="icon"><use href="#chev"/></svg></button>
+        <a class="header__page-link" href="eventos.html" aria-current="page">Eventos</a>
+      </nav>
+      <div class="header__tools">
+        <button class="icon-btn" type="button" aria-label="Buscar"><svg class="icon"><use href="#search"/></svg></button>
+        <button class="icon-btn" type="button" aria-label="Notificaciones"><svg class="icon"><use href="#bell"/></svg><span class="badge"></span></button>
+        <button class="user" type="button" aria-expanded="false" aria-controls="panel-perfil"><span class="user__avatar">ME</span><span class="user__txt"><span class="user__name">Mi espacio</span><br><span class="user__role">Estudiante</span></span><svg class="icon"><use href="#chev"/></svg></button>
+        <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Abrir menú"><svg class="icon"><use href="#menu"/></svg></button>
+      </div>
+    </div>
+    <div class="container menus"><nav aria-label="Menús">
+      <div class="panel panel--servicios" id="panel-servicios" hidden>
+        <div class="panel__cabecera"><h2 class="panel__titulo">Servicios académicos</h2></div>
+        <div class="columnas">
+          <div class="columna"><h3 class="grupo__titulo">Consultas académicas</h3><ul class="lista">
+            <li><a class="item" href="asignaturas.html">Asignaturas cursadas</a></li>
+            <li><a class="item" href="horario.html">Horario</a></li>
+            <li><a class="item" href="calculadora-notas.html">Calculadora de notas</a></li>
+          </ul></div>
+          <div class="columna"><h3 class="grupo__titulo">Bienestar universitario</h3><ul class="lista"><li><a class="item" href="horas-libres.html">Horas libres</a></li></ul></div>
+        </div>
+      </div>
+      <div class="panel" id="panel-tramites" hidden><div class="panel__cabecera"><h2 class="panel__titulo">Trámites</h2></div><ul class="lista"><li><a class="item" href="#">Cronogramas académicos</a></li></ul></div>
+      <div class="panel panel--perfil" id="panel-perfil" hidden><div class="panel__cabecera"><h2 class="panel__titulo">Perfil</h2></div><ul class="lista">
+        <li><a class="item" href="perfil.html">Mi perfil</a></li><li><a class="item" href="editar-perfil.html">Editar perfil</a></li><li><a class="item" href="../login.html">Cerrar sesión</a></li>
+      </ul></div>
+    </nav></div>
+  </header>
+
+  <main>
+    <div class="container pagebar"><nav aria-label="Ruta de navegación"><a href="../index.html">Portal estudiantil</a> / Eventos</nav><div class="pagebar__right"><strong>Agenda universitaria</strong></div></div>
+    <section class="container">
+      <h1 class="portal-title">Eventos</h1>
+      <p class="portal-intro">Encuentros, actividades y experiencias para vivir la universidad.</p>
+      <div class="events-heading"><h2>Próximamente en el campus</h2><span>Agenda ilustrativa · Periodo 2026-2</span></div>
+      <div class="events-grid">
+        <article class="event-card">
+          <div class="event-card__date"><span>DIC</span><strong>02</strong></div>
+          <div class="event-card__body"><span class="event-card__category">Vida académica</span><h3>Feria de proyectos de ingeniería</h3><p>Conoce las ideas y prototipos desarrollados por estudiantes de la facultad.</p><div class="event-card__meta"><span><svg class="icon"><use href="#calendar"/></svg>Miércoles · 9:00 a. m.</span><span><svg class="icon"><use href="#location"/></svg>Plaza central</span></div></div>
+        </article>
+        <article class="event-card">
+          <div class="event-card__date event-card__date--green"><span>DIC</span><strong>10</strong></div>
+          <div class="event-card__body"><span class="event-card__category event-card__category--green">Bienestar</span><h3>Pausa activa y bienestar</h3><p>Un espacio para desconectarte, compartir y recargar energía durante la semana.</p><div class="event-card__meta"><span><svg class="icon"><use href="#calendar"/></svg>Jueves · 11:00 a. m.</span><span><svg class="icon"><use href="#location"/></svg>Terraza de Bienestar</span></div></div>
+        </article>
+        <article class="event-card">
+          <div class="event-card__date event-card__date--orange"><span>DIC</span><strong>15</strong></div>
+          <div class="event-card__body"><span class="event-card__category event-card__category--orange">Cultura</span><h3>Concierto de fin de semestre</h3><p>Disfruta una tarde de música en vivo con el talento de nuestra comunidad.</p><div class="event-card__meta"><span><svg class="icon"><use href="#calendar"/></svg>Martes · 4:00 p. m.</span><span><svg class="icon"><use href="#location"/></svg>Auditorio Mayor</span></div></div>
+        </article>
+        <article class="event-card">
+          <div class="event-card__date event-card__date--blue"><span>ENE</span><strong>20</strong></div>
+          <div class="event-card__body"><span class="event-card__category event-card__category--blue">Comunidad</span><h3>Bienvenida a estudiantes</h3><p>Inicia el nuevo periodo conociendo los servicios y espacios de la universidad.</p><div class="event-card__meta"><span><svg class="icon"><use href="#calendar"/></svg>Miércoles · 8:00 a. m.</span><span><svg class="icon"><use href="#location"/></svg>Campus central</span></div></div>
+        </article>
+      </div>
+      <p class="portal-note">Las fechas y actividades son de ejemplo y pueden cambiar.</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">
+    <div class="footer__top"><img class="footer__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB"><div><h3>Portal estudiantil</h3><p>Un espacio para conectar con tu universidad,<br>acompañar tu aprendizaje y vivir el campus.</p></div><div><h3>Enlaces útiles</h3><div class="footer__links"><a href="https://unab.edu.co/">Sitio UNAB</a><a href="#">Biblioteca</a><a href="#">Bienestar</a></div></div><div><h3>Te acompañamos</h3><a href="#">Centro de ayuda</a></div></div>
+    <div class="footer__bottom"><span>© 2026 UNAB · Universidad Autónoma de Bucaramanga</span><span>Propuesta de interfaz · Contenidos y fechas de ejemplo</span><span><a href="#">Privacidad</a> &nbsp; <a href="#">Accesibilidad</a></span></div>
+  </div></footer>
+  <script src="../js/navbar.js"></script>
+</body>
+</html>

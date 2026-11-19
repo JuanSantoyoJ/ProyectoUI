@@ -58,7 +58,13 @@ document.addEventListener("click", (e) => {
   if (!e.target.closest(".header")) cerrarTodos();
 });
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") cerrarTodos(true);
+  if (e.key === "Escape") {
+    cerrarTodos(true);
+    if (toggleMenu && navPrincipal) {
+      toggleMenu.setAttribute("aria-expanded", "false");
+      navPrincipal.classList.remove("is-open");
+    }
+  }
 });
 
 // Botón hamburguesa (pantallas pequeñas): muestra u oculta los enlaces principales.

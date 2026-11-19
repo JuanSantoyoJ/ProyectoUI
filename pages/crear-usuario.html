@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear usuario · Portal estudiantil UNAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/portal-pages.css">
+</head>
+<body class="signup-page">
+  <main class="login">
+    <section class="brand">
+      <a class="brand__tag" href="../index.html">Portal estudiantil</a>
+      <div class="brand__center"><img class="brand__logo" src="../assets/img/logo-unab.png" alt="Universidad UNAB"><h1>UNAB Campus</h1><p>Tu vida universitaria, conectada.<br>Un espacio para seguir avanzando.</p></div>
+      <div class="brand__foot"><span>Aprender. Conectar. Crecer.</span><span>UNAB Campus</span></div>
+    </section>
+    <section class="access signup-access">
+      <a class="access__help" href="../login.html">Volver a iniciar sesión</a>
+      <form class="form signup-form" id="signup-form">
+        <p class="form__eyebrow">Únete a la comunidad</p>
+        <h2>Crear usuario</h2>
+        <p class="form__intro">Completa tus datos para preparar tu cuenta de estudiante.</p>
+        <div class="field"><label for="signup-name">Nombre completo</label><div class="field__box"><input id="signup-name" name="name" type="text" placeholder="Tu nombre y apellido" autocomplete="name" required minlength="3"></div><p class="field__error" aria-live="polite"></p></div>
+        <div class="field"><label for="signup-id">Código estudiantil</label><div class="field__box"><input id="signup-id" name="studentId" type="text" placeholder="Ej. U00123456" autocomplete="off" required pattern="[A-Za-z0-9\-]{5,16}"></div><p class="field__error" aria-live="polite"></p></div>
+        <div class="field"><label for="signup-email">Correo institucional</label><div class="field__box"><input id="signup-email" name="email" type="email" placeholder="nombre@unab.edu.co" autocomplete="email" pattern=".+@unab\.edu\.co" title="Usa tu correo institucional terminado en @unab.edu.co" required></div><p class="field__error" aria-live="polite"></p></div>
+        <div class="field"><label for="signup-password">Contraseña</label><div class="field__box"><input id="signup-password" name="password" type="password" placeholder="Al menos 8 caracteres" autocomplete="new-password" required minlength="8"></div><p class="field__error" aria-live="polite"></p></div>
+        <div class="field"><label for="signup-confirm">Confirmar contraseña</label><div class="field__box"><input id="signup-confirm" name="confirmPassword" type="password" placeholder="Escribe de nuevo tu contraseña" autocomplete="new-password" required minlength="8"></div><p class="field__error" aria-live="polite"></p></div>
+        <p class="portal-form__notice">Prototipo de interfaz: no se crea una cuenta real ni se envía o almacena tu contraseña.</p>
+        <p class="portal-form__message" id="signup-message" role="status" aria-live="polite"></p>
+        <button class="btn btn--primary" type="submit">Continuar</button>
+        <div class="divider">¿Ya tienes una cuenta?</div>
+        <a class="btn btn--outline" href="../login.html">Iniciar sesión</a>
+      </form>
+      <p class="access__secure">Tus datos no se envían desde esta demostración.</p>
+    </section>
+  </main>
+  <script src="../js/crear-usuario.js"></script>
+</body>
+</html>

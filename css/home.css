@@ -4,6 +4,8 @@
 .header__logo { height: 42px; }
 .nav { display: flex; gap: 32px; flex: 1; }
 .nav button { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #fff; }
+.header__page-link { display: flex; align-items: center; color: #fff; font-size: 15px; font-weight: 600; }
+.header__page-link:hover { text-decoration: underline; }
 .header__tools { display: flex; align-items: center; gap: 20px; }
 .header__tools .icon-btn { position: relative; display: grid; place-items: center; color: #fff; }
 .badge { position: absolute; top: -2px; right: -2px; width: 7px; height: 7px; border-radius: 50%; background: #fff; }
@@ -45,7 +47,7 @@
 /* Hero / carrusel */
 .main { display: grid; gap: 22px; min-width: 0; }
 .hero { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 188px; padding: 20px 22px; border-radius: var(--radius-md); overflow: hidden; color: #fff;
-  background: linear-gradient(90deg, var(--color-primary) 35%, rgba(61,61,234,.55)), url('../assets/img/hero.jpg') center / cover var(--color-primary); }
+  background: linear-gradient(90deg, var(--color-primary) 35%, rgba(61,61,234,.55)), var(--color-primary); }
 .hero__tag { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 8px; background: #fff; color: var(--color-text); font-size: 12px; font-weight: 700; text-transform: uppercase; }
 .hero__tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); }
 .hero__link { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; }
@@ -92,7 +94,7 @@ td:last-child { color: var(--color-secondary); }
 @media (max-width: 960px) {
   .layout { grid-template-columns: 1fr; }
   .quick__grid { grid-template-columns: 1fr; }
-  .nav, .user__txt { display: none; }
+  .user__txt { display: none; }
   .footer__top { grid-template-columns: 1fr; gap: 20px; }
   .sched { overflow-x: auto; }
   .pagebar, .footer__bottom { flex-direction: column; }

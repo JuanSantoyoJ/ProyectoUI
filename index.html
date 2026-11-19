@@ -67,6 +67,7 @@
   <header class="header">
     <div class="container header__in">
       <a href="index.html"><img class="header__logo" src="assets/img/logo-unab.png" alt="Universidad UNAB"></a>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
       <button type="button" aria-expanded="false" aria-controls="panel-servicios">Servicios académicos <svg
           class="icon">
           <use href="#chev" />
@@ -74,9 +75,7 @@
       <button type="button" aria-expanded="false" aria-controls="panel-tramites">Trámites <svg class="icon">
           <use href="#chev" />
         </svg></button>
-      <button type="button" aria-expanded="false">Eventos <svg class="icon">
-          <use href="#chev" />
-        </svg></button>
+      <a class="header__page-link" href="pages/eventos.html">Eventos</a>
       </nav>
       <div class="header__tools">
         <button class="icon-btn" aria-label="Buscar"><svg class="icon">
@@ -102,7 +101,7 @@
     </div>
 
     <div class="container menus">
-      <nav class="nav" id="nav-principal" aria-label="Principal">
+      <nav aria-label="Menús">
         <!-- TRÁMITES -->
         <div class="panel" id="panel-tramites" hidden>
           <div class="panel__cabecera">
@@ -133,6 +132,12 @@
                 <li><a class="item" href="https://unab.edu.co/donaciones/fondo-de-becas-rafaelardiladuarte/">Fondo de
                     Becas UNAB</a></li>
               </ul>
+              <h3 class="grupo__titulo">Consultas académicas</h3>
+              <ul class="lista">
+                <li><a class="item" href="pages/asignaturas.html">Asignaturas cursadas</a></li>
+                <li><a class="item" href="pages/horario.html">Horario</a></li>
+                <li><a class="item" href="pages/calculadora-notas.html">Calculadora de notas</a></li>
+              </ul>
               <h3 class="grupo__titulo">Bienestar universitario</h3>
               <ul class="lista">
                 <li><a class="item" href="#">Desarrollo humano</a></li>
@@ -142,7 +147,6 @@
                 </li>
                 <li><a class="item" href="#">Cultura</a></li>
                 <li><a class="item" href="pages/horas-libres.html">Horas libres</a></li>
-                <li><a class="item" href="pages/calculadora-notas.html">Calculadora de notas</a></li>
               </ul>
             </div>
             <div class="columna">
@@ -171,7 +175,7 @@
           </div>
           <ul class="lista">
             <li><a class="item" href="pages/perfil.html">Mi perfil</a></li>
-            <li><a class="item" href="#">Editar perfil</a></li>
+            <li><a class="item" href="pages/editar-perfil.html">Editar perfil</a></li>
             <li><a class="item" href="login.html">Cerrar sesión</a></li>
           </ul>
         </div>
@@ -192,7 +196,7 @@
             <use href="#news" />
           </svg>
         </div>
-        <img class="news__img" src="assets/img/noticia-1.jpg" alt="">
+        <div class="news__img" aria-hidden="true"></div>
         <article class="news__item">
           <p class="news__cat">Vida en el campus</p>
           <h3 class="news__title">Nuevos espacios para aprender juntos</h3>
@@ -242,7 +246,7 @@
             <p class="event__meta">4:00 p. m. · Campus</p>
           </div>
         </div>
-        <a class="more" href="#">Explorar la agenda <svg class="icon">
+        <a class="more" href="pages/eventos.html">Explorar la agenda <svg class="icon">
             <use href="#arrow" />
           </svg></a>
         <p class="note">Noticias y eventos de ejemplo. No corresponden a anuncios oficiales.</p>
