@@ -10,6 +10,15 @@ const actividades = [
   { nombre: 'Charla de bienestar emocional',     tipo: 'Desarrollo personal',  hora: '14:00 – 16:00', fecha: '2026-10-09', lugar: 'Auditorio Jesús Alberto Rey', horas: 2 },
 ];
 
+// Ranking de ejemplo para mostrar los estudiantes con mayor acumulado.
+const estudiantesRanking = [
+  { nombre: 'María Fernanda Gómez', programa: 'Administración de Empresas', horas: 96 },
+  { nombre: 'Juan Sebastián Pérez', programa: 'Ingeniería de Sistemas', horas: 92 },
+  { nombre: 'Laura Sofía Martínez', programa: 'Diseño Industrial', horas: 88 },
+  { nombre: 'Andrés Felipe Rojas', programa: 'Derecho', horas: 84 },
+  { nombre: 'Valentina Torres', programa: 'Psicología', horas: 80 },
+];
+
 const MESES = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
 const formatoFecha = (iso) => {
   const [a, m, d] = iso.split('-').map(Number);
@@ -25,6 +34,29 @@ function render() {
   const total = lista.reduce((suma, a) => suma + a.horas, 0);
   const pct = Math.min(100, (total / HORAS_REQUERIDAS) * 100);
   const faltan = Math.max(0, HORAS_REQUERIDAS - total);
+
+  // Ranking de estudiantes
+  const ranking = document.getElementById('ranking-estudiantes');
+  ranking.innerHTML = estudiantesRanking.map((estudiante, index) => {
+    const iniciales = estudiante.nombre
+      .split(' ')
+      .map((palabra) => palabra[0])
+      .slice(0, 2)
+      .join('');
+
+    return `
+      <tr>
+        <td><span class="ranking__position ranking__position--${index + 1}">${index + 1}</span></td>
+        <td>
+          <div class="ranking__student">
+            <span class="ranking__avatar">${esc(iniciales)}</span>
+            <span class="ranking__name">${esc(estudiante.nombre)}</span>
+          </div>
+        </td>
+        <td>${esc(estudiante.programa)}</td>
+        <td class="num"><span class="ranking__hours">${numero(estudiante.horas)} h</span></td>
+      </tr>`;
+  }).join('');
 
   // Tabla
   const tbody = document.getElementById('actividades');
